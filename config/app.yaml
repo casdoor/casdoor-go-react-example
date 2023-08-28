@@ -29,7 +29,7 @@ certificate: |
   8XKXmzlxuHbTMQYtZPDgspS5aK+S4Q9wb8RRAYo=
   -----END CERTIFICATE-----
 server:
-  endpoint: "https://localhost:7001"
+  endpoint: "http://localhost:7001"
   client_id: "294b09fbc17f95daf2fe"
   client_secret: "dd8982f7046ccba1bbd7851d5c1ece4e52bf039d"
   organization: "casbin"

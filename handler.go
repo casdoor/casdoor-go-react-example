@@ -37,7 +37,6 @@ func signinHandler(w http.ResponseWriter, r *http.Request) {
 	code := r.URL.Query().Get("code")
 	state := r.URL.Query().Get("state")
 
-	fmt.Println("get code and state:", code, state)
 	token, err := casdoorsdk.GetOAuthToken(code, state)
 
 	if err != nil {
@@ -53,7 +52,6 @@ func signinHandler(w http.ResponseWriter, r *http.Request) {
 		"status": "ok",
 		"data":   token.AccessToken,
 	})
-	fmt.Println("finish")
 }
 
 func userinfoHandler(w http.ResponseWriter, r *http.Request) {
