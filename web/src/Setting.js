@@ -29,10 +29,10 @@ import Sdk from "casdoor-js-sdk";
 export const ServerUrl = "http://localhost:8080";
 
 const sdkConfig = {
-  serverUrl: "http://localhost:7001",
-  clientId: "294b09fbc17f95daf2fe",
+  serverUrl: "https://door.casdoor.com",
+  clientId: "b800a86702dd4d29ec4d",
   organizationName: "casbin",
-  appName: "app-react-go-example",
+  appName: "app-example",
   redirectPath: "/callback",
 };
 
