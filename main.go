@@ -15,12 +15,13 @@
 package main
 
 import (
-	"casdoor-go-react-sdk-example/config"
 	"fmt"
+	"net/http"
+
+	"casdoor-go-react-sdk-example/config"
 	"github.com/casdoor/casdoor-go-sdk/casdoorsdk"
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
-	"net/http"
 )
 
 func initAuthConfig() {
@@ -45,7 +46,6 @@ func main() {
 
 	router := mux.NewRouter()
 
-	router.HandleFunc("/api/redirect-url", redirectUrlHandler)
 	router.HandleFunc("/api/signin", signinHandler)
 	router.HandleFunc("/api/userinfo", userinfoHandler)
 

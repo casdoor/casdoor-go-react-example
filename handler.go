@@ -17,21 +17,11 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/casdoor/casdoor-go-sdk/casdoorsdk"
 	"net/http"
 	"strings"
+
+	"github.com/casdoor/casdoor-go-sdk/casdoorsdk"
 )
-
-func redirectUrlHandler(w http.ResponseWriter, r *http.Request) {
-	url := casdoorsdk.GetSigninUrl("http://localhost:3000/callback")
-
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(map[string]interface{}{
-		"status": "ok",
-		"data":   url,
-	})
-}
 
 func signinHandler(w http.ResponseWriter, r *http.Request) {
 	code := r.URL.Query().Get("code")
@@ -57,17 +47,17 @@ func signinHandler(w http.ResponseWriter, r *http.Request) {
 func userinfoHandler(w http.ResponseWriter, r *http.Request) {
 	authHeader := r.Header.Get("Authorization")
 	if authHeader == "" {
-		http.Error(w, "Unauthorized", http.StatusUnauthorized)
+		http.Error(w, "authHeader is empty", http.StatusUnauthorized)
 		return
 	}
 
 	token := strings.Split(authHeader, "Bearer ")
 	if len(token) != 2 {
-		http.Error(w, "Unauthorized", http.StatusUnauthorized)
+		http.Error(w, "token is not valid Bearer token", http.StatusUnauthorized)
 		return
 	}
 
-	chaims, err := casdoorsdk.ParseJwtToken(token[1])
+	claims, err := casdoorsdk.ParseJwtToken(token[1])
 	if err != nil {
 		http.Error(w, "Unauthorized", http.StatusUnauthorized)
 		return
@@ -77,6 +67,6 @@ func userinfoHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(map[string]interface{}{
 		"status": "ok",
-		"data":   chaims.User,
+		"data":   claims.User,
 	})
 }

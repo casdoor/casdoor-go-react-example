@@ -17,13 +17,7 @@ import * as Setting from "./Setting";
 
 class LoginPage extends React.Component {
   casdoorLogin() {
-    Setting.getRedirectUrl().then((res) => {
-      if (res?.status === "ok") {
-        Setting.goToLink(res.data);
-      } else {
-        Setting.showMessage("failed to get redirect url");
-      }
-    });
+    Setting.goToLink(Setting.getSigninUrl());
   }
 
   render() {

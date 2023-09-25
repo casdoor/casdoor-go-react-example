@@ -36,7 +36,7 @@ const sdkConfig = {
   redirectPath: "/callback",
 };
 
-export const CasdoorSDK = new Sdk(sdkConfig);
+export const CasdoorSdk = new Sdk(sdkConfig);
 
 export const isLoggedIn = () => {
   const token = localStorage.getItem("token");
@@ -50,6 +50,10 @@ export const setToken = (token) => {
 export const goToLink = (link) => {
   window.location.href = link;
 };
+
+export function getSigninUrl() {
+  return CasdoorSdk.getSigninUrl();
+}
 
 export const getRedirectUrl = () => {
   return fetch(`${ServerUrl}/api/redirect-url`, {

@@ -82,7 +82,7 @@ class HomePage extends React.Component {
           style={{ marginTop: 200, textAlign: "center", alignItems: "center" }}
         >
           <SilentSignin
-            sdk={Setting.CasdoorSDK}
+            sdk={Setting.CasdoorSdk}
             isLoggedIn={Setting.isLoggedIn}
             handleReceivedSilentSigninSuccessEvent={() => Setting.goToLink("/")}
             handleReceivedSilentSigninFailureEvent={() => {}}

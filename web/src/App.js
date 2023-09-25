@@ -23,7 +23,7 @@ import HomePage from "./HomePage";
 class App extends React.Component {
   authCallback = (
     <AuthCallback
-      sdk={Setting.CasdoorSDK}
+      sdk={Setting.CasdoorSdk}
       serverUrl={Setting.ServerUrl}
       saveTokenFromResponse={(res) => {
         Setting.setToken(res.data);

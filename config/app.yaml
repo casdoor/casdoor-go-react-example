@@ -29,7 +29,7 @@ certificate: |
   8XKXmzlxuHbTMQYtZPDgspS5aK+S4Q9wb8RRAYo=
   -----END CERTIFICATE-----
 server:
-  endpoint: "https://door.casdoor.com/"
+  endpoint: "https://door.casdoor.com"
   client_id: "b800a86702dd4d29ec4d"
   client_secret: "1GzE9QGPueqa3t58eMTg8ah3yh43gQbPig2ec1d5"
   organization: "casbin"
