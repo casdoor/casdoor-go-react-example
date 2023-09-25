@@ -2956,15 +2956,17 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001370, caniuse-lite@^1.0.30001373:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001390.tgz#158a43011e7068ef7fc73590e9fd91a7cece5e7f"
   integrity sha512-sS4CaUM+/+vqQUlCvCJ2WtDlV81aWtHhqeEVkLokVJJa3ViN4zDxAGfq9R8i1m90uGHxo99cy10Od+lvn3hf0g==
 
-casdoor-js-sdk@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.npmmirror.com/casdoor-js-sdk/-/casdoor-js-sdk-0.3.0.tgz#89475e30e16f10082e2bf5b78b94324c7bce1b64"
-  integrity sha512-Mf0OEOGrD6cU8X+gzsgeZrKvC9JxHobgCHeBlKHMvNWKeU4J3sfmhWonOwF4iFnbvrK7I2a5YOpO9gAoSayB1g==
+casdoor-js-sdk@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/casdoor-js-sdk/-/casdoor-js-sdk-0.11.0.tgz#fbc193f0ea77f03c7b26b57d9737fd7d7f1c65f7"
+  integrity sha512-6MdULUb/UfyvXtS35DtvnbJ7K8ABGNFlokwpZpZuMEWl3WU89MWJgL872T/kZV8+Yjl3hVBXdg9256uW3v66sg==
+  dependencies:
+    js-pkce "^1.3.0"
 
-casdoor-react-sdk@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npmmirror.com/casdoor-react-sdk/-/casdoor-react-sdk-1.1.0.tgz#62829ee8bc9cde01064a64d5fa8ecbcc8c875aa0"
-  integrity sha512-wOppHG24ewAgd7ZW9EMvTmOqAWa8Uvi777v0aolltDg1FGCbHl4BwmApuY7TlOdzHqUHMB97cwW5oq3eOr9G8g==
+casdoor-react-sdk@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/casdoor-react-sdk/-/casdoor-react-sdk-1.2.0.tgz#c5fab911603c9c9fff27b1f9d445875c7dcda558"
+  integrity sha512-vFR1Gr63LsYqMPzA63r3b2QwHqD0rF3QDfrZbtHT1EqPdVu/gvny5YXK8REgkyY038GDQTBXb5JjNTiWFFIVtw==
 
 case-sensitive-paths-webpack-plugin@^2.4.0:
   version "2.4.0"
@@ -3264,6 +3266,11 @@ cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
     which "^2.0.1"
+
+crypto-js@^4.0.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.1.1.tgz#9e485bcf03521041bd85844786b83fb7619736cf"
+  integrity sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==
 
 crypto-random-string@^2.0.0:
   version "2.0.0"
@@ -5709,6 +5716,13 @@ jest@^27.4.3:
     "@jest/core" "^27.5.1"
     import-local "^3.0.2"
     jest-cli "^27.5.1"
+
+js-pkce@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/js-pkce/-/js-pkce-1.3.0.tgz#08b880ef1b70698cefe3ee5824e272a007486ca3"
+  integrity sha512-jCp27tVBad6ePGXOi4pdGPRc23nE7vKmfml+VAz/IU9gm/YhxewYjqmLtVFxHv4qHqRO09VmrGUAwvwmT4Ze5Q==
+  dependencies:
+    crypto-js "^4.0.0"
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"

@@ -44,7 +44,6 @@ class HomePage extends React.Component {
 
   logout() {
     Setting.logout();
-    Setting.showMessage("logout successfully");
     Setting.goToLink("/");
   }
 
