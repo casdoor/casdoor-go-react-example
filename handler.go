@@ -28,14 +28,12 @@ func signinHandler(w http.ResponseWriter, r *http.Request) {
 	state := r.URL.Query().Get("state")
 
 	token, err := casdoorsdk.GetOAuthToken(code, state)
-
 	if err != nil {
-		fmt.Println("get token error", err)
-		http.Error(w, "Error get token", http.StatusInternalServerError)
+		fmt.Println("GetOAuthToken() error", err)
+		http.Error(w, "GetOAuthToken() error", http.StatusInternalServerError)
 		return
 	}
 
-	casdoorsdk.ParseJwtToken(token.AccessToken)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(map[string]interface{}{
@@ -59,7 +57,7 @@ func userinfoHandler(w http.ResponseWriter, r *http.Request) {
 
 	claims, err := casdoorsdk.ParseJwtToken(token[1])
 	if err != nil {
-		http.Error(w, "Unauthorized", http.StatusUnauthorized)
+		http.Error(w, "ParseJwtToken() error", http.StatusUnauthorized)
 		return
 	}
 

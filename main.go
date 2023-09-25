@@ -38,18 +38,14 @@ func initAuthConfig() {
 func main() {
 	err := config.LoadConfig("config/app.yaml")
 	if err != nil {
-		fmt.Println("Failed to load config:", err)
-		return
+		panic(err)
 	}
 
 	initAuthConfig()
 
 	router := mux.NewRouter()
-
 	router.HandleFunc("/api/signin", signinHandler)
 	router.HandleFunc("/api/userinfo", userinfoHandler)
-
-	fmt.Println("Server listening at http://localhost:8080")
 
 	c := cors.New(cors.Options{
 		AllowedOrigins:   []string{"http://localhost:3000"},
@@ -60,5 +56,6 @@ func main() {
 
 	handler := c.Handler(router)
 
+	fmt.Println("Server listening at: http://localhost:8080")
 	http.ListenAndServe(":8080", handler)
 }
