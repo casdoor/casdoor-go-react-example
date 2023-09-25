@@ -24,49 +24,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import Sdk from "casdoor-js-sdk";
-import * as Conf from "./Conf";
-
-export const ServerUrl = "http://localhost:8080";
-
-export const CasdoorSdk = new Sdk(Conf.sdkConfig);
-
-export const isLoggedIn = () => {
-  const token = localStorage.getItem("token");
-  return token !== null && token.length > 0;
-};
-
-export const setToken = (token) => {
-  localStorage.setItem("token", token);
-};
-
-export const goToLink = (link) => {
-  window.location.href = link;
-};
-
-export function getSigninUrl() {
-  return CasdoorSdk.getSigninUrl();
-}
-
-export const getRedirectUrl = () => {
-  return fetch(`${ServerUrl}/api/redirect-url`, {
-    method: "GET",
-  }).then((res) => res.json());
-};
-
-export const getUserinfo = () => {
-  return fetch(`${ServerUrl}/api/userinfo`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  }).then((res) => res.json());
-};
-
-export const logout = () => {
-  localStorage.removeItem("token");
-};
-
-export const showMessage = (message) => {
-  alert(message);
+export const sdkConfig = {
+  serverUrl: "https://door.casdoor.com",
+  clientId: "294b09fbc17f95daf2fe",
+  organizationName: "casbin",
+  appName: "app-vue-python-example",
+  redirectPath: "/callback",
 };

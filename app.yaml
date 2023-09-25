@@ -30,8 +30,8 @@ certificate: |
   -----END CERTIFICATE-----
 server:
   endpoint: "https://door.casdoor.com"
-  client_id: "b800a86702dd4d29ec4d"
-  client_secret: "1GzE9QGPueqa3t58eMTg8ah3yh43gQbPig2ec1d5"
+  client_id: "294b09fbc17f95daf2fe"
+  client_secret: "dd8982f7046ccba1bbd7851d5c1ece4e52bf039d"
   organization: "casbin"
-  application: "app-example"
+  application: "app-vue-python-example"
   frontend_url: "http://localhost:3000"
