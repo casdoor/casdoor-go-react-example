@@ -5,10 +5,10 @@
 
 Example contains 2 parts:
 
-| Name     | SDK               | Language           | Source code                                |
-|----------|-------------------|--------------------|--------------------------------------------|
+| Name     | SDK               | Language           | Source code                                  |
+|----------|-------------------|--------------------|----------------------------------------------|
 | Frontend | casdoor-react-sdk | Javascript + React | https://github.com/casdoor/casdoor-react-sdk |
-| Backend  | casdoor-go-sdk    | Go                 | https://github.com/casdoor/casdoor-go-sdk  |
+| Backend  | casdoor-go-sdk    | Go                 | https://github.com/casdoor/casdoor-go-sdk    |
 
 ### Demo videos
 
@@ -31,21 +31,23 @@ git clone https://github.com/casdoor/casdoor-go-react-sdk-example
 
 ### Frontend
 
+Modify `web/src/Conf.js`: https://github.com/casdoor/casdoor-go-react-sdk-example/blob/master/web/src/Conf.js
+
 ```js
-// in web/src/Setting.js
-const sdkConfig = {
-  serverUrl: "http://localhost:7001",
+export const sdkConfig = {
+  serverUrl: "https://door.casdoor.com",
   clientId: "294b09fbc17f95daf2fe",
   organizationName: "casbin",
-  appName: "app-react-go-example",
+  appName: "app-vue-python-example",
   redirectPath: "/callback",
 };
 ```
 
 ### Backend
 
+Modify `app.yaml`: https://github.com/casdoor/casdoor-go-react-sdk-example/blob/master/app.yaml
+
 ```yaml
-# in config/app.yaml
 # certificate:get in your Casdoor server -> application
 certificate: |
   -----BEGIN CERTIFICATE-----
@@ -78,28 +80,34 @@ certificate: |
   8XKXmzlxuHbTMQYtZPDgspS5aK+S4Q9wb8RRAYo=
   -----END CERTIFICATE-----
 server:
-  endpoint: "https://localhost:7001"
+  endpoint: "https://door.casdoor.com"
   client_id: "294b09fbc17f95daf2fe"
   client_secret: "dd8982f7046ccba1bbd7851d5c1ece4e52bf039d"
   organization: "casbin"
-  application: "app-react-go-example"
+  application: "app-vue-python-example"
   frontend_url: "http://localhost:3000"
 ```
 
-- install dependencies
+- Install frontend dependencies
 
-  ```shell
-  PS .\casdoor-go-react-sdk-example\web> yarn install
-  PS .\casdoor-go-react-sdk-example> go mod tidy
-  ```
+```shell
+cd web
+yarn install
+```
 
 - run
 
-For Linux:
+Frontend:
 
-  ```
-  user@machine:/casdoor-python-vue-sdk-example/web$ yarn start
-  user@machine:/casdoor-python-vue-sdk-example$ go run main.go
-  ```
+```shell
+cd web
+yarn start
+```
+
+Backend:
+
+```shell
+go run main.go
+```
 
 - Now, example runs its front end at port 3000 and runs it's back end at port 8080. You can modify the code and see what will happen.
