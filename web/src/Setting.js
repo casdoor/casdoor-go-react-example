@@ -44,14 +44,8 @@ export const goToLink = (link) => {
   window.location.href = link;
 };
 
-export function getSigninUrl() {
+export const getSigninUrl = () => {
   return CasdoorSdk.getSigninUrl();
-}
-
-export const getRedirectUrl = () => {
-  return fetch(`${ServerUrl}/api/redirect-url`, {
-    method: "GET",
-  }).then((res) => res.json());
 };
 
 export const getUserinfo = () => {
