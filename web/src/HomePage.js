@@ -22,6 +22,7 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
       account: undefined,
+      users: null,
     };
   }
 
@@ -36,7 +37,17 @@ class HomePage extends React.Component {
             },
           });
         } else {
-          Setting.showMessage(res?.status);
+          Setting.showMessage(`getUserinfo() error: ${res?.msg}`);
+        }
+      });
+
+      Setting.getUsers().then((res) => {
+        if (res?.status === "ok") {
+          this.setState({
+            users: res.data,
+          });
+        } else {
+          Setting.showMessage(`getUsers() error: ${res?.msg}`);
         }
       });
     }
@@ -66,6 +77,10 @@ class HomePage extends React.Component {
             />
             <br />
             <p>{this.state.account.username}</p>
+            <br />
+            <h3>Fetch first 10 users as admin:</h3>
+            {JSON.stringify(this.state.users?.slice(0, 10).map(user => user.name))}
+            <br />
             <br />
             <button onClick={this.logout}>Logout</button>
           </div>

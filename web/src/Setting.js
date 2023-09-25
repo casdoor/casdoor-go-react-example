@@ -57,6 +57,15 @@ export const getUserinfo = () => {
   }).then((res) => res.json());
 };
 
+export const getUsers = () => {
+  return fetch(`${Conf.sdkConfig.serverUrl}/api/get-users?owner=${Conf.sdkConfig.organizationName}`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  }).then((res) => res.json());
+};
+
 export const logout = () => {
   localStorage.removeItem("token");
 };
