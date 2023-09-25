@@ -14,7 +14,7 @@ Example contains 2 parts:
 
 1. login:
 
-![normalLogin](./img/login.gif)
+![normalLogin](./login.gif)
 
 
 ## Installation

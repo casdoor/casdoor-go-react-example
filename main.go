@@ -18,7 +18,6 @@ import (
 	"fmt"
 	"net/http"
 
-	"casdoor-go-react-sdk-example/config"
 	"github.com/casdoor/casdoor-go-sdk/casdoorsdk"
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
@@ -26,17 +25,17 @@ import (
 
 func initAuthConfig() {
 	casdoorsdk.InitConfig(
-		config.GlobalConfig.Server.Endpoint,
-		config.GlobalConfig.Server.ClientID,
-		config.GlobalConfig.Server.ClientSecret,
-		config.GlobalConfig.Certificate,
-		config.GlobalConfig.Server.Organization,
-		config.GlobalConfig.Server.Application,
+		GlobalConfig.Server.Endpoint,
+		GlobalConfig.Server.ClientID,
+		GlobalConfig.Server.ClientSecret,
+		GlobalConfig.Certificate,
+		GlobalConfig.Server.Organization,
+		GlobalConfig.Server.Application,
 	)
 }
 
 func main() {
-	err := config.LoadConfig("config/app.yaml")
+	err := LoadConfig("app.yaml")
 	if err != nil {
 		panic(err)
 	}
