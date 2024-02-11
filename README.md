@@ -24,14 +24,14 @@ Example uses Casdoor to manage members. So you need to create an organization an
 ### Get the code
 
 ```shell
-git clone https://github.com/casdoor/casdoor-go-react-sdk-example
+git clone https://github.com/casdoor/casdoor-go-react-example
 ```
 
 ## Configuration
 
 ### Frontend
 
-Modify `web/src/Conf.js`: https://github.com/casdoor/casdoor-go-react-sdk-example/blob/master/web/src/Conf.js
+Modify `web/src/Conf.js`: https://github.com/casdoor/casdoor-go-react-example/blob/master/web/src/Conf.js
 
 ```js
 export const sdkConfig = {
@@ -45,7 +45,7 @@ export const sdkConfig = {
 
 ### Backend
 
-Modify `app.yaml`: https://github.com/casdoor/casdoor-go-react-sdk-example/blob/master/app.yaml
+Modify `app.yaml`: https://github.com/casdoor/casdoor-go-react-example/blob/master/app.yaml
 
 ```yaml
 # certificate:get in your Casdoor server -> application

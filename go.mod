@@ -1,4 +1,4 @@
-module github.com/casdoor/casdoor-go-react-sdk-example
+module github.com/casdoor/casdoor-go-react-example
 
 go 1.19
 
