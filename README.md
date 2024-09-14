@@ -107,7 +107,7 @@ yarn start
 Backend:
 
 ```shell
-go run main.go
+go run .
 ```
 
 - Now, example runs its front end at port 3000 and runs it's back end at port 8080. You can modify the code and see what will happen.
